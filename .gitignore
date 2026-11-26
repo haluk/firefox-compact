@@ -1,0 +1,6 @@
+# Local tooling
+.claude/
+.superpowers/
+
+# OS
+.DS_Store

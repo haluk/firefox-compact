@@ -1,0 +1,47 @@
+/* firefox-compact — trims the remaining chrome. Layout itself comes from user.js prefs. */
+
+/* Thin top bar (~32px): smaller button padding. */
+:root {
+  --toolbarbutton-outer-padding: 1px !important;
+  --toolbarbutton-inner-padding: 5px !important;
+  --toolbar-start-end-padding: 4px !important;
+}
+#nav-bar {
+  min-height: 32px !important;
+}
+
+/* Slimmer URL bar. */
+#urlbar-container {
+  --urlbar-container-height: 30px !important;
+  padding-block: 1px !important;
+}
+#urlbar {
+  --urlbar-min-height: 26px !important;
+}
+
+/* Hide decorative bits in the URL bar until the field is focused. */
+#urlbar:not([focused]) #tracking-protection-icon-container,
+#urlbar:not([focused]) #page-action-buttons > :not(#star-button-box, #reader-mode-button) {
+  display: none !important;
+}
+
+/* Tighter vertical tab rows. */
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab {
+  padding-block: 0 !important;
+  min-height: 30px !important;
+}
+#tabbrowser-tabs[orient="vertical"] {
+  --tab-min-height: 28px !important;
+}
+
+/* Collapsed sidebar: less spacing around tool buttons. */
+#sidebar-main .tools-and-extensions {
+  gap: 0 !important;
+}
+
+/* No ">>" tools-overflow chevron at the bottom of the sidebar. */
+#sidebar-main::part(overflow-button),
+.more-tools-button,
+button-group.overflow-button {
+  display: none !important;
+}
